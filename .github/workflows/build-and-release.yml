@@ -1,0 +1,43 @@
+name: Build and Release on Tag
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Verify packages or repair an existing release
+        type: choice
+        options: [verify, nexus, requirements]
+        default: verify
+      version:
+        description: Version X.Y.Z (blank uses the latest changelog section for verify)
+        type: string
+        required: false
+      existing_file_uid:
+        description: Existing Nexus version UID for requirements repair
+        type: string
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    uses: DooDesch-Mods/.github/.github/workflows/mimesis-release.yml@main
+    with:
+      project: ShotgunPlus.csproj
+      assembly: ShotgunPlus
+      library: false
+      mimicapi: false
+      thunderstore: true
+      nexus: false
+      api_requirement: false
+      operation: ${{ github.event_name == 'push' && 'publish' || inputs.operation }}
+      version: ${{ inputs.version }}
+      existing_file_uid: ${{ inputs.existing_file_uid }}
+    secrets:
+      WORKSPACE_TOKEN: ${{ secrets.WORKSPACE_TOKEN }}
+      THUNDERSTORE_TOKEN: ${{ secrets.THUNDERSTORE_TOKEN }}
+      NEXUSMODS_API_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      DISCORD_RELEASE_WEBHOOK: ${{ secrets.DISCORD_RELEASE_WEBHOOK }}

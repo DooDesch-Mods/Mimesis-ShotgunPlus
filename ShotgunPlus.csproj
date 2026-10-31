@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$(MSBuildThisFileDirectory)../Workspace/build/GameRefs.props" Condition="Exists('$(MSBuildThisFileDirectory)../Workspace/build/GameRefs.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)Workspace/build/GameRefs.props" Condition="Exists('$(MSBuildThisFileDirectory)Workspace/build/GameRefs.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)../Workspace/build/HostSettings.props" Condition="Exists('$(MSBuildThisFileDirectory)../Workspace/build/HostSettings.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)Workspace/build/HostSettings.props" Condition="Exists('$(MSBuildThisFileDirectory)Workspace/build/HostSettings.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)../Workspace/build/Weapons.props" Condition="Exists('$(MSBuildThisFileDirectory)../Workspace/build/Weapons.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)Workspace/build/Weapons.props" Condition="Exists('$(MSBuildThisFileDirectory)Workspace/build/Weapons.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)../Workspace/build/Deploy.props" Condition="Exists('$(MSBuildThisFileDirectory)../Workspace/build/Deploy.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)Workspace/build/Deploy.props" Condition="Exists('$(MSBuildThisFileDirectory)Workspace/build/Deploy.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)../Workspace/build/Hardening.props" Condition="Exists('$(MSBuildThisFileDirectory)../Workspace/build/Hardening.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)Workspace/build/Hardening.props" Condition="Exists('$(MSBuildThisFileDirectory)Workspace/build/Hardening.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)../Workspace/build/ModVersion.props" Condition="Exists('$(MSBuildThisFileDirectory)../Workspace/build/ModVersion.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)Workspace/build/ModVersion.props" Condition="Exists('$(MSBuildThisFileDirectory)Workspace/build/ModVersion.props')" />
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+    <Version Condition="'$(Version)' == ''">0.0.0-dev</Version>
+    <AssemblyName>ShotgunPlus</AssemblyName>
+    <RootNamespace>ShotgunPlus</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.UI"><HintPath>$(GameManagedPath)/UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+  </ItemGroup>
+</Project>

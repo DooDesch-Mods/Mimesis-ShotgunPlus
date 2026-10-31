@@ -1,0 +1,12 @@
+{
+  "name": "ShotgunPlus",
+  "version_number": "0.0.0",
+  "website_url": "https://github.com/DooDesch-Mods/Mimesis-ShotgunPlus",
+  "description": "Infinite reserve with the normal one-round reload. Select an infinite magazine when you want to shoot without reloading.",
+  "dependencies": [
+    "LavaGang-MelonLoader-0.7.3"
+  ],
+  "contributors": [
+    "DooDesch"
+  ]
+}
