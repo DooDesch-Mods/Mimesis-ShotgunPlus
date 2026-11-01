@@ -38,7 +38,7 @@ Optional tuning starts at **1.0 = native**. The primary unlimited mode is enable
 | Setting | Default | Effect |
 | --- | --- | --- |
 | `Enabled` | `true` | Enable gameplay changes for this weapon |
-| `AmmoMode` | `1` | 0 = native, 1 = infinite reserve with normal reload, 2 = infinite magazine |
+| `AmmoMode` | `1` | 0 = native, 1 = infinite reserve with normal reload, 2 = infinite magazine, 3 = no reload with finite ammo |
 | `Unbreakable` | `false` | Prevent combat durability loss |
 | `SpreadMultiplier` | `1.0` | Native hit-cone angle multiplier, 0.1-4 |
 | `ReloadTimeMultiplier` | `1.0` | Reload animation, insertion event and reload cooldown duration multiplier, 0.25-4 |
@@ -47,7 +47,7 @@ Optional tuning starts at **1.0 = native**. The primary unlimited mode is enable
 | `CooldownMultiplier` | `1.0` | Attack skill cooldown multiplier, 0.1-5; animation duration stays native |
 | `ShowInfinity` | `true` | Local HUD only: show infinity for unlimited ammunition, energy or protected bat durability |
 
-The native ammo label shows loaded rounds plus infinity in reserve mode, for example `1/∞` or `2/∞`. Infinite-magazine mode shows `∞`. Reload and firing inputs stay native. `SpreadMultiplier` changes the actual hit-cone width.
+The native ammo label shows loaded rounds plus infinity in reserve mode, for example `1/∞` or `2/∞`. Infinite-magazine mode shows `∞`. Mode 3 shows the remaining loaded rounds plus compatible inventory shells as ∞/N. Each shot spends real ammo and shooting stops at zero. Reload and firing inputs stay native. `SpreadMultiplier` changes the actual hit-cone width.
 
 ## In game
 
