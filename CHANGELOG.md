@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.0] - 2026-11-01
+
+### Added
+
+- AmmoMode 3: shoot without reloading using a finite supply of loaded rounds and compatible inventory shells. The native HUD shows ∞/remaining ammo. Requested by life520.
+
 ## [1.0.0] - 2026-10-31
 
 ### Added
