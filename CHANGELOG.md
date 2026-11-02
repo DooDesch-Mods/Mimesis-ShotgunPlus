@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.1] - 2026-11-02
+
+### Fixed
+
+- Restore the player's animation speed before another weapon skill starts. Overlapping accelerated reloads from both shotgun mods could otherwise leave animations running too fast.
+
 ## [1.1.0] - 2026-11-01
 
 ### Added
